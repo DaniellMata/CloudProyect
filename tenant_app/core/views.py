@@ -17,6 +17,7 @@ class UserListView(generics.ListAPIView):
     def get_queryset(self):
         user = self.request.user
         # Intentamos obtener el tenant del usuario autenticado
+        #ola
         try:
             tenant = user.userprofile.tenant
             return UserProfile.objects.filter(tenant=tenant)
